@@ -62,6 +62,17 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
+        
+        'myFirebirdConnection' => [
+            'driver'   => 'firebird',
+            'host'     => env('DB_FIREBIRD_HOST', 'localhost'),
+            'port'     => env('DB_FIREBIRD_PORT', '3050'),
+            'database' => env('DB_FIREBIRD_DATABASE', 'C:\Users\LICITACIONES\Documents\PILAR2019.FDB'),
+            'username' => env('DB_FIREBIRD_USERNAME', 'SYSDBA'),
+            'password' => env('DB_FIREBIRD_PASSWORD', 'masterkey'),
+            'charset'  => env('DB_FIREBIRD_CHARSET', 'UTF8'),
+        ],
+
 
         'pgsql' => [
             'driver' => 'pgsql',
@@ -125,7 +136,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
